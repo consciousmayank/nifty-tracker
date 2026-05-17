@@ -231,7 +231,7 @@ return'<svg width="60" height="36" viewBox="0 0 60 36" preserveAspectRatio="none
 }
 function fmt(n){return n!=null?"Rs "+n.toLocaleString("en-IN",{maximumFractionDigits:2}):"--";}
 function fvol(v){return!v?"--":v>=1e7?(v/1e7).toFixed(1)+"Cr":v>=1e5?(v/1e5).toFixed(1)+"L":v.toLocaleString("en-IN");}
-function bdg(i){var lbl=i===0?"#1":i===1?"#2":i===2?"#3":String(i+1);return'<div class="rb '+（i<3?"r"+(i+1):"rn")+'">'+ lbl +"</div>";}
+function bdg(i){var lbl=i===0?"#1":i===1?"#2":i===2?"#3":String(i+1);return'<div class="rb '+(i<3?"r"+(i+1):"rn")+'">'+ lbl +"</div>";}
 function tgFav(s){var idx=favs.indexOf(s);if(idx===-1)favs.push(s);else favs.splice(idx,1);localStorage.setItem("n50f",JSON.stringify(favs));rnd();}
 function setSec(s){sf=s;rW();}
 function card(st,rank,intra){
