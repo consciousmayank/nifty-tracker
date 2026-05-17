@@ -158,7 +158,7 @@ function swTab(i){ct=i;var tabs=document.querySelectorAll(".tab");for(var j=0;j<
 function rnd(){if(ct===0)rW();else if(ct===1)rI();else rF();}
 function yfetch(sym,rng,intv,cb){
 var x=new XMLHttpRequest();
-x.open("GET","https://query1.finance.yahoo.com/v8/finance/chart/"+sym+"?interval="+intv+"&range="+rng);
+x.open("GET","https://corsproxy.io/?url="+encodeURIComponent("https://query1.finance.yahoo.com/v8/finance/chart/"+sym+"?interval="+intv+"&range="+rng));
 x.setRequestHeader("Accept","application/json");
 x.onload=function(){try{var d=JSON.parse(x.responseText);cb(null,d.chart&&d.chart.result&&d.chart.result[0]||null);}catch(e){cb(e,null);}};
 x.onerror=function(){cb(new Error("net"),null);};
